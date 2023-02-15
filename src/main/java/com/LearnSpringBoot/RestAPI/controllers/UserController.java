@@ -1,7 +1,7 @@
 package com.LearnSpringBoot.RestAPI.controllers;
 
-import com.LearnSpringBoot.RestAPI.DTO.LoginForm;
-import com.LearnSpringBoot.RestAPI.DTO.ResponseObject;
+import com.LearnSpringBoot.RestAPI.dto.LoginForm;
+import com.LearnSpringBoot.RestAPI.dto.ResponseObject;
 import com.LearnSpringBoot.RestAPI.model.User;
 import com.LearnSpringBoot.RestAPI.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,4 +46,6 @@ public class UserController {
         System.out.println(phone);
         return "00";
     }
+
+
 }

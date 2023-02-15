@@ -25,6 +25,7 @@ public class User {
 
     private String identityNumber;
     private String password;
+
     private String phone;
     @NotNull
     private String fullName;
@@ -33,12 +34,16 @@ public class User {
     private String accountNo = randomMoney(10000,100000000);
 
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "userTo", cascade = CascadeType.ALL)
     @JsonBackReference
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
-    private List<Payment> payments;
-
+    private List<Payment> paymentTo;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "userFrom", cascade = CascadeType.ALL)
+    @JsonBackReference
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
+    private List<Payment> paymentFrom;
     String randomMoney(int min,int max) {
         Random random = new Random();
         int randomNumber = random.nextInt(max - min) + min;

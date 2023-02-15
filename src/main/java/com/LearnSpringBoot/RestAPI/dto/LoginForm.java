@@ -1,4 +1,4 @@
-package com.LearnSpringBoot.RestAPI.DTO;
+package com.LearnSpringBoot.RestAPI.dto;
 
 import lombok.Data;
 

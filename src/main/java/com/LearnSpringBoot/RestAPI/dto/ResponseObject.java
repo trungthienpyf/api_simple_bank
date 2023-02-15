@@ -1,4 +1,4 @@
-package com.LearnSpringBoot.RestAPI.DTO;
+package com.LearnSpringBoot.RestAPI.dto;
 
 public class ResponseObject {
     private String status;

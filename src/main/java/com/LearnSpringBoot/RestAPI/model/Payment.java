@@ -7,8 +7,9 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 @Entity
-@Table
 @Data
+@Table(name = "payments")
+
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,11 +18,18 @@ public class Payment {
     private String description;
     @ManyToOne(fetch = FetchType.LAZY)
 
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "toAcc")
     @EqualsAndHashCode.Exclude
 
     @ToString.Exclude
-    private User user;
+    private User userTo;
+    @ManyToOne(fetch = FetchType.LAZY)
+
+    @JoinColumn(name = "fromAcc")
+    @EqualsAndHashCode.Exclude
+
+    @ToString.Exclude
+    private User userForm;
 
 
 }
